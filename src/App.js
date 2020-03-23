@@ -26,6 +26,10 @@ class App extends React.Component {
     }
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
+  // Edit todo passed down the ladder to TodoList > TodoItem
+  editTodo = (id, name) => {
+    console.log(id, name);
+  }
   // Delete todo passed down the ladder to TodoList > TodoItem
   delTodo = (id) => {
     console.log(id);
@@ -47,6 +51,7 @@ class App extends React.Component {
           <TodoList
             todos={this.state.todos}
             addTodo={this.addTodo}
+            editTodo={this.editTodo}
             delTodo={this.delTodo}
           />
         </ul>
