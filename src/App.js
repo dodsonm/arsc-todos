@@ -8,14 +8,19 @@ import './App.css';
 class App extends React.Component {
   // add a placeholder on state for our json
   state = {
-    todos: []
+    todos: [],
+    sort: ''
   }
 
   componentWillMount() {
     axios
       .get('dat-todos.json')
       .then(res => {
-        this.setState({ todos: res.data });
+        // JSON already sorted on ID
+        this.setState({
+          todos: res.data,
+          sort: 'id'
+        });
       });
   }
 
@@ -33,7 +38,10 @@ class App extends React.Component {
       }
       return 0;
     });
-    this.setState({ todos: todos });
+    this.setState({
+      todos: todos,
+      sort: 'name'
+    });
   }
 
   sortByCreation = () => {
@@ -41,7 +49,10 @@ class App extends React.Component {
     todos.sort((a,b) => {
       return a.id - b.id;
     });
-    this.setState({ todos: todos });
+    this.setState({
+      todos: todos,
+      sort: 'id'
+    });
   }
 
   // Add todo passed down the ladder to TodoList > AddTodoItem
@@ -58,7 +69,10 @@ class App extends React.Component {
   }
   // Delete todo passed down the ladder to TodoList > TodoItem
   delTodo = (id) => {
-    console.log(id);
+    console.log('Delete', id);
+    this.setState({
+      todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    })
   }
 
   getNextId = () => {
@@ -74,6 +88,7 @@ class App extends React.Component {
           <h1>ASRC Todo List</h1>
         </header>
         <Menu
+          sort={this.state.sort}
           sortByName={this.sortByName}
           sortByCreation={this.sortByCreation}
         />

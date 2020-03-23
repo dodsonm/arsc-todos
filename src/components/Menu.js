@@ -6,8 +6,12 @@ class Menu extends React.Component {
     return (
       <nav className="Menu">
         <span>Sort by</span>
-        <button onClick={this.props.sortByName}>Name</button>
-        <button onClick={this.props.sortByCreation}>Recent</button>
+        <button
+          disabled={this.props.sort === 'name'? 'disabled': ''}
+          onClick={this.props.sortByName}>Name</button>
+        <button
+          disabled={this.props.sort === 'id'? 'disabled': ''}
+          onClick={this.props.sortByCreation}>Recent</button>
       </nav>
     );
   }
