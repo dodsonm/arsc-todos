@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoList.css';
-import Todo from './Todo';
+import TodoItem from './TodoItem';
 
 class TodoList extends React.Component {
   render() {
@@ -8,7 +8,8 @@ class TodoList extends React.Component {
       <ul className="TodoList">
         {
           this.props.todos.map((todo) => (
-            <Todo
+            <TodoItem
+              key={todo.id}
               content={todo}
               delTodo={this.props.delTodo}
             />

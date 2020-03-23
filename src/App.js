@@ -1,28 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import TodoList from './components/TodoList';
+import axios from 'axios';
+
+import './App.css';
 
 class App extends React.Component {
+  // add a placeholder on state for our json
   state = {
-    todos: [
-      {
-        id: 1,
-        name: 'Clear input',
-        done: true
-      },
-      {
-        id: 2,
-        name: 'Add item',
-        done: false
-      },
-      {
-        id: 3,
-        name: 'Remove item',
-        done: false
-      },
-    ]
+    todos: []
   }
+
+  componentWillMount() {
+    axios
+      .get('dat-todos.json')
+      .then(res => {
+        this.setState({ todos: res.data });
+      });
+  }
+
 
   // Delete todo (passed down the ladder to TodoList > Todo)
   delTodo = (id) => {
