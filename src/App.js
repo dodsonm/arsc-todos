@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoList';
+import Menu from './components/Menu';
 import axios from 'axios';
 
 import './App.css';
@@ -16,6 +17,31 @@ class App extends React.Component {
       .then(res => {
         this.setState({ todos: res.data });
       });
+  }
+
+  sortByName = () => {
+    const todos = this.state.todos;
+
+    todos.sort((a,b) => {
+      const nameA = a.name,
+            nameB = b.name;
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA < nameB) {
+        return 1;
+      }
+      return 0;
+    });
+    this.setState({ todos: todos });
+  }
+
+  sortByCreation = () => {
+    const todos = this.state.todos;
+    todos.sort((a,b) => {
+      return a.id - b.id;
+    });
+    this.setState({ todos: todos });
   }
 
   // Add todo passed down the ladder to TodoList > AddTodoItem
@@ -47,6 +73,10 @@ class App extends React.Component {
         <header>
           <h1>ASRC Todo List</h1>
         </header>
+        <Menu
+          sortByName={this.sortByName}
+          sortByCreation={this.sortByCreation}
+        />
         <ul>
           <TodoList
             todos={this.state.todos}

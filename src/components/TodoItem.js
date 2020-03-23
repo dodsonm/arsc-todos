@@ -1,20 +1,20 @@
 import React from 'react';
 import './TodoItem.css';
 
-class Todo extends React.Component {
+class TodoItem extends React.Component {
   render() {
     const { id, name } = this.props.content;
     return (
-      <li className="Todo">
+      <li className="TodoItem">
         <input
           type="text"
           name="title"
           value={ name }
-          className="Todo-input"
+          className="TodoItem-input"
           onChange={this.props.editTodo.bind(this, id, name)}
         />
         <button
-          className="Todo-del"
+          className="TodoItem-del"
           onClick={this.props.delTodo.bind(this, id)}
         >x</button>
       </li>
@@ -22,4 +22,4 @@ class Todo extends React.Component {
   }
 }
 
-export default Todo;
+export default TodoItem;
