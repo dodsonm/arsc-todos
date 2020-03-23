@@ -1,6 +1,8 @@
 import React from 'react';
-import './TodoList.css';
 import TodoItem from './TodoItem';
+import AddTodoItem from './AddTodoItem';
+
+import './TodoList.css';
 
 class TodoList extends React.Component {
   render() {
@@ -15,6 +17,9 @@ class TodoList extends React.Component {
             />
           ))
         }
+        <li>
+          <AddTodoItem addTodo={this.props.addTodo} />
+        </li>
       </ul>
     );
   }

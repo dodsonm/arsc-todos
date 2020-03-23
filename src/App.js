@@ -18,10 +18,23 @@ class App extends React.Component {
       });
   }
 
-
-  // Delete todo (passed down the ladder to TodoList > Todo)
+  // Add todo passed down the ladder to TodoList > AddTodoItem
+  addTodo = (name) => {
+    const newTodo = {
+      id: this.getNextId(),
+      name: name
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  }
+  // Delete todo passed down the ladder to TodoList > TodoItem
   delTodo = (id) => {
     console.log(id);
+  }
+
+  getNextId = () => {
+    const ids = this.state.todos.map(t => t.id);
+    const newId = ids.sort().reverse()[0] + 1;
+    return newId;
   }
 
   render() {
@@ -33,6 +46,7 @@ class App extends React.Component {
         <ul>
           <TodoList
             todos={this.state.todos}
+            addTodo={this.addTodo}
             delTodo={this.delTodo}
           />
         </ul>
