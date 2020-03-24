@@ -16,7 +16,6 @@ npm start
 - I nearly missed the requirement for importing data with a button click. I was importing automatically on App.componentWillMount. To keep things simple, the user currently has to click to import data before they can add new Todos or sort. Hopefully that's ok.
 - I didn't make an 'enter' *button* for adding a new Todo. The user will currently have to focus into the field with the "Add Todo..." placeholder text and hit the 'enter' *key* to add new Todos--I'm just realizing it might have been a misinterpretation of the reqs on my part.
 - I started adding edit functionality, but I think that was safe to leave incomplete
-– CSS in super-duper minimal.
 
 ## History recap
 - I basically started off building the basic Todo components using data in a local obj in App.js
