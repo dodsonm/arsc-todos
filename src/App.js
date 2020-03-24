@@ -12,7 +12,7 @@ class App extends React.Component {
     sort: ''
   }
 
-  componentWillMount() {
+  getData = () => {
     axios
       .get('dat-todos.json')
       .then(res => {
@@ -88,6 +88,7 @@ class App extends React.Component {
           <h1>ASRC Todo List</h1>
         </header>
         <Menu
+          getData={this.getData}
           sort={this.state.sort}
           sortByName={this.sortByName}
           sortByCreation={this.sortByCreation}

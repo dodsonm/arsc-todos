@@ -1,7 +1,6 @@
 .Menu {
   background-color: #ccc;
   font-size: 15px;
-  text-align: right;
 }
 
 .Menu button {
@@ -12,4 +11,8 @@
 }
 .Menu button:hover {
   color: steelblue;
+}
+.Menu-import-btn {
+  color: red;
+  font-size: 1.2em;
 }

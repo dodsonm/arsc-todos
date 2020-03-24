@@ -6,6 +6,9 @@ import './TodoList.css';
 
 class TodoList extends React.Component {
   render() {
+    if (this.props.todos.length === 0) {
+      return false;
+    }
     return (
       <ul className="TodoList">
         {
