@@ -11,7 +11,7 @@ class Menu extends React.Component {
           onClick={this.props.sortByName}>Name</button>
         <button
           disabled={this.props.sort === 'id'? 'disabled': ''}
-          onClick={this.props.sortByCreation}>Recent</button>
+          onClick={this.props.sortByCreation}>Creation</button>
       </nav>
     );
   }

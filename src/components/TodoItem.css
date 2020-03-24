@@ -1,0 +1,18 @@
+.TodoItem {
+  margin: 0.2em 0;
+}
+.TodoItem-input {
+  border: none;
+  border-bottom: dotted 1px #777;
+  color: #777;
+  font-size: 1.5em;
+  padding: 0.2em;
+  width: 85%;
+}
+.TodoItem-del {
+  background-color: #f66;
+  color: white;
+  font-size: 1.5em;
+  padding: 0.2em;
+  cursor: pointer;
+}

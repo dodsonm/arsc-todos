@@ -84,7 +84,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
+        <header className="App=header">
           <h1>ASRC Todo List</h1>
         </header>
         <Menu
@@ -92,14 +92,12 @@ class App extends React.Component {
           sortByName={this.sortByName}
           sortByCreation={this.sortByCreation}
         />
-        <ul>
-          <TodoList
-            todos={this.state.todos}
-            addTodo={this.addTodo}
-            editTodo={this.editTodo}
-            delTodo={this.delTodo}
-          />
-        </ul>
+        <TodoList
+          todos={this.state.todos}
+          addTodo={this.addTodo}
+          editTodo={this.editTodo}
+          delTodo={this.delTodo}
+        />
       </div>
     );
   }

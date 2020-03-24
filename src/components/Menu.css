@@ -1,0 +1,15 @@
+.Menu {
+  background-color: #ccc;
+  font-size: 15px;
+  text-align: right;
+}
+
+.Menu button {
+  font-size: 1em;
+  margin: 0 0.2em;
+  padding: 0.1em 0.4em;
+  cursor: pointer;
+}
+.Menu button:hover {
+  color: steelblue;
+}

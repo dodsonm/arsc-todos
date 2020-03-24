@@ -18,7 +18,7 @@ class TodoList extends React.Component {
             />
           ))
         }
-        <li>
+        <li className="TodoItem">
           <AddTodoItem addTodo={this.props.addTodo} />
         </li>
       </ul>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './AddTodoItem.css';
 
 export class AddTodo extends Component {
   state = {
@@ -17,8 +18,9 @@ export class AddTodo extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit} className="AddTodoItem">
         <input
+          className="AddTodoItem-input"
           type="text"
           name="title"
           value={this.state.title}
