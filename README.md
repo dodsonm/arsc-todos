@@ -19,7 +19,7 @@ npm start
 
 ## History recap
 - I basically started off building the basic Todo components using data in a local obj in App.js
-- Next, I moved the static data to an external JSON file in the public folder & loaded it using the Axios library on componentWillMount
+- Next, I moved the static data to an external JSON file in the public folder & loaded it using the Axios library on componentWillMount. The goal was to load the JSON file in a manner similar to working with a RESTful API.
 - After the JSON import was working, I added the basic Add & Delete features
 - Then I moved on to sorting
-– Finally, I made some minimal CSS updates. Ideally, I'd use something like Material-UI or even Bootstrap, but I just didn't want to complicate things.
+- Finally, I made some minimal CSS updates. Ideally, I'd use something like Material-UI or even Bootstrap, but that may have been overkill.
