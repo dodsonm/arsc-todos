@@ -1,3 +1,10 @@
 .TodoList {
-  list-style-position: inside;
+  list-style: none;
+}
+.TodoList li::before {
+  content: '•';
+  color: inherit;
+}
+.TodoList .hide-bullet {
+  margin-left: -2.5%;
 }

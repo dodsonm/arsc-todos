@@ -6,7 +6,10 @@
   border-bottom: dotted 1px #777;
   color: #777;
   font-size: 1.5em;
-  /* margin: 0.2em 0; */
   padding: 0.2em;
-  width: 88%;
+  width: 85%;
+}
+.AddTodoItem-input::placeholder {
+  color: #aaa;
+  font-style: italic;
 }

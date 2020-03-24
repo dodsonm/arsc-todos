@@ -21,7 +21,7 @@ class TodoList extends React.Component {
             />
           ))
         }
-        <li className="TodoItem">
+        <li className="TodoItem hide-bullet">
           <AddTodoItem addTodo={this.props.addTodo} />
         </li>
       </ul>

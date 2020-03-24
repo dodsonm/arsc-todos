@@ -4,15 +4,19 @@
 }
 
 .Menu button {
+  color: steelblue;
   font-size: 1em;
   margin: 0 0.2em;
   padding: 0.1em 0.4em;
   cursor: pointer;
 }
 .Menu button:hover {
-  color: steelblue;
+  color: lightsteelblue;
 }
-.Menu-import-btn {
+.Menu button:disabled {
+  color: #666;
+}
+.Menu .Menu-import-btn {
   color: red;
-  font-size: 1.2em;
+  font-size: 1.75em;
 }
